@@ -1,15 +1,14 @@
 from datetime import datetime
+from pydantic import BaseModel, field_validator, Field
 
-from pydantic import BaseModel, field_validator
 
-
-class Message(BaseModel):
+class MessageValidator(BaseModel):
     # Fields of the Message model
     appeal_id: int
     sender_id: int
     sender_is_admin: bool
     message_text: str
-    created_at: datetime
+    created_at: datetime = Field(default_factory=datetime.now)
 
     # Check that the message is not empty
     @field_validator('message_text')
