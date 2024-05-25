@@ -117,6 +117,6 @@ class Appeal(Base):
             f"Closed At: {self.closed_at},\n "
             f"Status: {self.status},\n "
             f"Responded Admins: {self.responded_admins},\n "
-            f"Users: { self.users},\n "
+            f"Users: {self.users},\n "
             f"Messages: {self.messages}"
         )
