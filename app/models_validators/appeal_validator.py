@@ -41,4 +41,3 @@ class AppealValidator(BaseModel):
         if v and values.get('status') != AppealStatus.CLOSED:
             raise ValueError('closed_at can only be set if status is CLOSED.')
         return v
-    
