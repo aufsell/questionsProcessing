@@ -30,6 +30,7 @@ class User(Base):
     last_name = Column(String(63), nullable=False)
     phone_number = Column(String(15), default='')
     username = Column(String(63), default='')
+    user_id = Column(String(63), default=0)
     password = Column(String(127), default='')
     is_admin = Column(Boolean, default=False)
     is_active = Column(Boolean, default=True)
@@ -57,8 +58,6 @@ class User(Base):
             f"Is Admin: {self.is_admin},\n "
             f"Is Active: {self.is_active},\n "
             f"Is Banned: {self.is_banned},\n "
-            f"Appeals: {self.appeals},\n "
-            f"Messages: {self.messages}"
         )
 
 
