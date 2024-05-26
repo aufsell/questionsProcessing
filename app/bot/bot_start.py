@@ -1,12 +1,13 @@
-import os,sys
+import os
+import sys
 
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-sys.path.append(os.path.join(os.getcwd(), 'app'))
-from utils.create_db import init_db
 
-from bot.handlers import user
+sys.path.append(os.path.join(os.getcwd(), 'app'))
+from bot.handlers import user # noqa
+from utils.create_db import init_db # noqa
 
 
 async def bot_start(db_file, logger):

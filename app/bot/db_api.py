@@ -1,5 +1,5 @@
 import sys
-import os, asyncio
+import os
 
 import dotenv
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
@@ -17,6 +17,7 @@ async_engine = create_async_engine(db_url, echo=True)
 async_session = sessionmaker(
     async_engine, expire_on_commit=False, class_=AsyncSession
 )
+
 
 async def check_user_existence(user_id):
     async with async_session() as session:
